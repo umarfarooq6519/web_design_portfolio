@@ -4,9 +4,13 @@ import Image from "next/image";
 import LinkButton from "./LinkButton";
 import { currentyear } from "@/app/utils/date";
 import { socials } from "@/app/utils/socials";
+import { screens } from "@/app/utils/screens";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathName = usePathname();
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -20,36 +24,28 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
-  const screens = [
-    {
-      title: "Home",
-      link: "#",
-    },
-    {
-      title: "About",
-      link: "#",
-    },
-    {
-      title: "Contact",
-      link: "#",
-    },
-  ];
+  useEffect(() => {
+    // Whenever the path changes, close menu
+    setIsMenuOpen(false);
+  }, [pathName]);
 
   return (
     <header className="w-full">
       <nav className="flex items-center justify-between">
-        <div
-          className={` ${isMenuOpen ? "text-background" : "text-foreground"} logo z-50 flex items-center gap-1 text-lg uppercase`}
+        <Link
+          href={"/"}
+          className={` ${isMenuOpen ? "text-background" : "text-foreground"} logo z-50 cursor-pointer text-lg uppercase`}
         >
-          <h5 className="font-semibold">Umar</h5>
-          <h6>Farooq</h6>
-        </div>
+          <h6>
+            Umar <span className="font-normal">Farooq</span>
+          </h6>
+        </Link>
 
         <button
           type="button"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
-          className="relative z-50 h-9 w-9 text-white"
+          className="relative z-50 h-9 w-9 cursor-pointer text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <Image
@@ -76,12 +72,15 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="bg-opacity-95 bg-foreground fixed inset-0 z-20 p-4">
           <div className="mt-20 flex h-full flex-col items-start justify-center">
-            <div className="text-background flex h-full w-full flex-col items-start justify-end space-y-4 text-6xl font-medium uppercase">
+            <div className="text-background flex h-full w-full flex-col items-start justify-end space-y-4">
               {screens.map((item, index) => (
-                <span key={index} className="inline-block overflow-hidden">
-                  <a href={item.link} className="block">
-                    {item.title}
-                  </a>
+                <span
+                  key={index}
+                  className="inline-block w-full cursor-pointer overflow-hidden"
+                >
+                  <Link href={item.link} className="block">
+                    <h1 className="font-medium">{item.title}</h1>
+                  </Link>
                 </span>
               ))}
             </div>

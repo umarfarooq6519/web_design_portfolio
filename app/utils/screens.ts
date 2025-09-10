@@ -1,0 +1,14 @@
+export const screens = [
+  {
+    title: "Home",
+    link: "#",
+  },
+  {
+    title: "About",
+    link: "/about",
+  },
+  {
+    title: "Projects",
+    link: "/projects",
+  },
+];

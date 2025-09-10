@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import ContactSection from "./pages/Contact";
+import Footer from "@/components/Footer";
+import { ReactLenis } from "lenis/react";
 
 const metadata: Metadata = {
   title: "Umar Farooq - Design & Digital Products",
@@ -22,11 +23,13 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`h-full min-h-screen p-4 antialiased`}>
-        <Navbar />
-        {children}
-        <ContactSection />
-      </body>
+      <ReactLenis root>
+        <body className={`h-full min-h-screen p-4 antialiased`}>
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </ReactLenis>
     </html>
   );
 }
