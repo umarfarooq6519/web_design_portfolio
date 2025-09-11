@@ -1,7 +1,7 @@
 export const screens = [
   {
     title: "Home",
-    link: "#",
+    link: "/",
   },
   {
     title: "About",

@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { projects } from "./utils/projects";
 import ProjectCard from "@/components/ProjectCard";
-import { ArrowRightLong } from "@/public/ArrowRightLong";
 
 export default function Home() {
   return (
@@ -17,7 +16,7 @@ export default function Home() {
         <div className="hero-content grow">
           <div className="flex h-full flex-col justify-center">
             <p className="text-foreground/60 text-2xl">Hi, I'm Umar,</p>
-            <span className="uppercase">
+            <span className="uppercase drop-shadow">
               <h2 className="font-normal">@ Creative</h2>
               <h1>Website</h1>
               <h1>Designer</h1>
@@ -36,7 +35,9 @@ export default function Home() {
         <div className="hero-wrapper flex w-full justify-end">
           <span className="max-w-3xs text-end">
             <h6 className="font-normal">
-              I create brands, design <br /> websites & shape digital products.
+              {/* I create brands, design <br /> websites & shape digital products. */}
+              I design websites to tell your brand's story, and convert visitors
+              into customers.
             </h6>
           </span>
         </div>
@@ -48,9 +49,9 @@ export default function Home() {
 
           <span className="flex max-w-2xs flex-col gap-12">
             <h3 className="font-normal">
-              I design websites that blend creativity with functionality,
-              experiences that feel natural and stay true to the brand while
-              engaging users.
+              I build websites for growing businesses - blending creativity with
+              functionality & experiences that feel natural to the brand while
+              engaging users
             </h3>
             <span className="w-fit">
               <LinkButton link="/about" text="About" />

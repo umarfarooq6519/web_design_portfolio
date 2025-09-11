@@ -8,11 +8,11 @@ export default function About() {
     <section id="about-section" className="h-full min-h-screen">
       <div className="main h-[90vh]">
         <div className="content pt-32">
-          <h1 className="h-full text-center text-7xl">About</h1>
+          <h1 className="h-full text-center text-7xl drop-shadow">About</h1>
         </div>
         <div className="wrapper relative overflow-visible">
           <Image
-            className="-mt-4 -ml-14 rounded-lg"
+            className="-mt-4 -ml-14 rounded"
             src={"/images/profile.JPEG"}
             alt="profile"
             width={260}
@@ -46,7 +46,7 @@ export default function About() {
             </p>
           </div>
 
-          <LinkButton text="Projects" link="#" />
+          <LinkButton text="Projects" link="/projects" />
         </div>
       </div>
 
@@ -56,7 +56,7 @@ export default function About() {
             I'm Umar, a website designer from{" "}
             <span className="text-green-700">Pakistan</span> with a computer
             science degree <i>+</i> over four years of experience in crafting
-            websites that helps business stand out.
+            websites that help businesses stand out.
           </h4>
         </div>
         <div className="wrapper text-foreground/60 flex justify-end pt-2 pr-4">
