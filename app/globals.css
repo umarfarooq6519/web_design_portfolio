@@ -28,19 +28,22 @@
     overflow-y: auto;
   }
   h1 {
-    @apply text-6xl font-semibold uppercase;
+    @apply text-6xl font-semibold uppercase sm:text-7xl md:text-8xl lg:text-[10rem] xl:leading-36;
   }
   h2 {
-    @apply text-5xl font-medium;
+    @apply text-5xl font-medium sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl xl:leading-28;
   }
   h3 {
-    @apply text-3xl font-medium;
+    @apply text-3xl font-medium sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl;
   }
   h4 {
-    @apply text-xl;
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-3xl;
+  }
+  h5 {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-3xl;
   }
   h6 {
-    @apply text-lg font-semibold;
+    @apply text-lg font-semibold sm:text-xl md:text-2xl lg:text-3xl xl:text-lg;
   }
   b {
     @apply font-medium;

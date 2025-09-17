@@ -1,4 +1,4 @@
-import { projects } from "@/app/utils/projects";
+import { projects } from "@/utils/projects";
 import LinkButton from "@/components/LinkButton";
 import { ArrowLeft } from "@/public/ArrowLeft";
 import Image from "next/image";
@@ -16,93 +16,113 @@ export default async function Page({
 
   return (
     <section id="project" className="h-full min-h-screen">
-      <div className="main h-[90vh]">
-        <div className="content pt-32">
-          <h1 className="h-full text-start text-6xl drop-shadow">
-            {project.title}
-          </h1>
+      <div className="flex h-screen items-center justify-center">
+        <div className="main container mx-auto h-fit">
+          <div className="content pt-32 md:pt-36 lg:pt-56 xl:pt-10">
+            <h1 className="h-full text-center text-6xl drop-shadow sm:text-7xl md:text-[7rem] lg:text-9xl lg:leading-28">
+              {project.title}
+            </h1>
 
-          {project.portraitImg && (
-            <div className="wrapper relative flex w-full justify-end">
-              <Image
-                className="relative -mt-4 -mr-4 rounded object-cover shadow-md"
-                src={project.portraitImg}
-                alt={`${project.title} portrait`}
-                width={200}
-                height={500}
-              />
-            </div>
-          )}
-        </div>
+            {project.portraitImg && (
+              <div className="wrapper flex justify-end xl:justify-center">
+                <div className="relative -mt-4 -mr-4 h-[280px] w-[200px] sm:-mr-6 sm:h-[320px] sm:w-[260px] md:-mt-6 md:h-[420px] md:w-[340] lg:-mt-8 lg:-mr-10 lg:h-[550px] lg:w-[440px] xl:-mr-0 xl:h-[460px] xl:w-[370px]">
+                  <Image
+                    className="rounded object-cover shadow-sm"
+                    src={project.portraitImg}
+                    alt={`${project.title} portrait`}
+                    fill
+                  />
+                </div>
+              </div>
+            )}
+          </div>
 
-        <div className="relative -mt-12 flex flex-col gap-4 pl-1 text-xl">
-          <span>
-            <b>Year</b>
-            <p>{project.year}</p>
-          </span>
-          <span>
-            <b>Project Type</b>
-            <p>{project.projectType}</p>
-          </span>
-          <span>
-            <b>My Role</b>
-            <p>{project.roles.join(", ")}</p>
-          </span>
+          <div className="relative -mt-12 flex flex-col gap-4 pl-1 text-xl sm:text-2xl lg:gap-6 lg:text-[2rem] xl:-mt-60 xl:text-2xl">
+            <span>
+              <b>Year</b>
+              <p>{project.year}</p>
+            </span>
+            <span>
+              <b>Project Type</b>
+              <p>{project.projectType}</p>
+            </span>
+            <span>
+              <b>My Role</b>
+              <p>{project.roles.join(", ")}</p>
+            </span>
+          </div>
         </div>
       </div>
 
-      <div className="content mt-20">
-        <div className="-mx-4 h-fit w-fit">
+      <div className="content mt-20 xl:mt-32">
+        <div className="relative -mx-4 h-[280px] w-screen sm:-mx-6 sm:h-[380px] md:h-[480px] lg:-mx-10 lg:h-[600px]">
           <Image
             src={project.landscapeImg}
             alt={`${project.title} landscape`}
-            width={800}
-            height={500}
-            className="h-auto max-w-full object-cover"
+            fill
+            className="object-cover"
           />
         </div>
 
         {/* ##### overview ##### */}
-        <div className="pt-14">
+        <div className="container mx-auto mt-14 md:mt-22 xl:mt-34">
           <h4>Overview</h4>
-          <h3 className="pt-2">{project.description}</h3>
-          {project.problem && <p className="pt-8">{project.problem}</p>}
+          <h3 className="pt-2 md:pt-4 xl:pt-6 xl:text-4xl">
+            {project.description}
+          </h3>
+          {project.problem && (
+            <p className="mt-8 md:mt-12 md:text-2xl lg:text-3xl lg:leading-11 xl:max-w-2xl xl:text-2xl">
+              {project.problem}
+            </p>
+          )}
         </div>
 
         {/* ##### solution ##### */}
         {project.solution && (
-          <div className="pt-10">
-            <h4 className="font-medium">Solution</h4>
-            <p className="pt-2">{project.solution}</p>
+          <div className="container mx-auto mt-10 flex justify-end sm:mt-14 md:mt-18 lg:mt-22">
+            <span className="max-w-2xl">
+              <h4 className="font-medium">Solution</h4>
+              <p className="pt-2 text-base sm:text-lg md:text-2xl lg:text-3xl lg:leading-11 xl:text-2xl">
+                {project.solution}
+              </p>
+            </span>
           </div>
         )}
 
         {/* ##### focus areas ##### */}
         {project.focusAreas && (
-          <div className="focus-areas bg-foreground text-background -mx-4 mt-18 px-5 py-8">
-            <h4 className="font-medium">Focus Areas</h4>
-            <ol className="divide-background/20 divide-y [counter-reset:item]">
-              {project.focusAreas.map((area, idx) => (
-                <li key={idx} className="flex py-4 [counter-increment:item]">
-                  <span className="w-8 shrink-0 before:font-medium before:content-['0'counter(item)]" />
-                  <span>{area}</span>
-                </li>
-              ))}
-            </ol>
+          <div className="focus-areas bg-foreground text-background -mx-4 mt-18 px-5 py-8 sm:-mx-6 sm:px-7 sm:py-12 md:py-14 lg:-mx-10 lg:mt-22 lg:px-9 lg:py-20 xl:mt-32 xl:py-26">
+            <div className="container mx-auto">
+              <h4 className="font-medium">Focus Areas</h4>
+              <ol className="divide-background/20 divide-y text-base [counter-reset:item] sm:text-lg md:mt-4 md:text-[1.35rem] lg:text-[1.75rem] xl:text-2xl">
+                {project.focusAreas.map((area, idx) => (
+                  <li
+                    key={idx}
+                    className="flex py-4 [counter-increment:item] md:py-6 lg:py-9"
+                  >
+                    <span className="w-8 shrink-0 before:font-medium before:content-['0'counter(item)] md:w-10 lg:w-12" />
+                    <span>{area}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         )}
 
         {/* ##### what made it work ##### */}
         {project.whatMadeItWork && (
-          <div className="mt-18">
+          <div className="container mx-auto mt-18">
             <h4 className="font-medium">What Made It Work</h4>
-            <p className="pt-2 pb-6">
+            <p className="pt-2 pb-6 text-base sm:text-lg md:text-xl lg:pt-3 lg:text-3xl xl:text-2xl">
               These key decisions drove user adoption and business growth.
             </p>
-            <ol className="divide-foreground/10 divide-y [counter-reset:item]">
+            <ol className="divide-foreground/10 divide-y text-base [counter-reset:item] sm:text-lg md:text-[1.35rem] lg:text-[1.75rem] xl:text-2xl">
               {project.whatMadeItWork.map((item, idx) => (
-                <li key={idx} className="flex py-4 [counter-increment:item]">
-                  <span className="w-8 shrink-0 before:font-medium before:content-['0'counter(item)]" />
+                <li
+                  key={idx}
+                  className="flex py-4 [counter-increment:item] md:py-6 lg:py-9"
+                >
+                  <span className="w-8 shrink-0 before:font-medium before:content-['0'counter(item)] md:w-10 lg:w-12" />
                   <span>
                     <b>{item.title}</b> <br /> {item.text}
                     <p className="text-foreground/60 pt-1">{item.result}</p>
@@ -113,11 +133,11 @@ export default async function Page({
           </div>
         )}
 
-        <div className="mt-14 h-fit w-fit pl-1">
+        <div className="container mx-auto mt-14 h-fit w-fit pl-1 xl:mt-20">
           <LinkButton
             text="Go back"
             link={`/projects/#${project.id}`}
-            icon={<ArrowLeft />}
+            icon={<ArrowLeft className="h-5 w-5 md:h-7 md:w-7" />}
             prefixIcon={true}
           />
         </div>

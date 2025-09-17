@@ -7,17 +7,21 @@ type LinkButtonType = {
   link: string;
   icon?: ReactNode;
   prefixIcon?: boolean;
+  className?: string;
 };
 
 const LinkButton = ({
   text,
   link,
-  icon = <ArrowUpRight />,
+  icon = (
+    <ArrowUpRight className="h-5 w-5 md:h-7 md:w-7 lg:h-8 lg:w-8 xl:h-5 xl:w-5" />
+  ),
   prefixIcon = false,
+  className = "",
 }: LinkButtonType) => (
   <Link
     href={link}
-    className="inline-flex w-fit cursor-pointer items-center gap-2 text-lg font-medium uppercase"
+    className={`inline-flex w-fit cursor-pointer items-center gap-2 text-lg font-medium uppercase sm:text-xl md:text-[1.65rem] lg:text-3xl xl:text-lg ${className}`}
   >
     <span>[</span>
     <span

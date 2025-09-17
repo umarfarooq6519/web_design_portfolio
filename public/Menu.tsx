@@ -1,6 +1,6 @@
-export const ArrowUpRight = ({
+export const Menu = ({
   className = "",
-  width = 2,
+  width = 1.5,
   color = "currentColor",
 }: {
   className?: string;
@@ -18,7 +18,7 @@ export const ArrowUpRight = ({
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
-      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+      d="M3.75 9h16.5m-16.5 6.75h16.5"
     />
   </svg>
 );

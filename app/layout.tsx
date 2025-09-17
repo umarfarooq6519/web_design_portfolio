@@ -24,7 +24,7 @@ export default function RootLayout({
         />
       </head>
       <ReactLenis root>
-        <body className={`h-full min-h-screen p-4 antialiased`}>
+        <body className={`h-full min-h-screen p-4 antialiased sm:p-6 lg:p-10`}>
           <Navbar />
           {children}
           <Footer />

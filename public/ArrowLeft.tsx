@@ -1,8 +1,10 @@
 export const ArrowLeft = ({
+  className = "",
   size = 18,
-  width = 2,
+  width = 1.5,
   color = "currentColor",
 }: {
+  className?: string;
   size?: number;
   width?: number;
   color?: string;
@@ -15,6 +17,7 @@ export const ArrowLeft = ({
     stroke={color}
     width={size}
     height={size}
+    className={className}
   >
     <path
       strokeLinecap="round"
