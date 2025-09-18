@@ -9,7 +9,7 @@ export default function page() {
       className="container mx-auto h-full min-h-screen"
     >
       <div className="main flex h-screen flex-col items-center justify-center">
-        <div className="">
+        <div className="xl:-mt-26">
           <div className="content -mt-56">
             <h1 className="h-full text-center drop-shadow">
               Case <br className="sm:hidden" /> Studies

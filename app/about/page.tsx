@@ -11,7 +11,7 @@ export default function About() {
           <h1 className="h-full text-center text-7xl drop-shadow sm:text-8xl md:text-[9rem]">
             About
           </h1>
-          <div className="wrapper relative -mt-9 -ml-14 h-[320px] w-[240px] overflow-visible sm:h-[340px] sm:w-[280px] md:h-[400px] md:w-[340px] lg:h-[500px] lg:w-[440px] xl:h-[440px] xl:w-[340px]">
+          <div className="wrapper relative -mt-4 -ml-14 h-[320px] w-[240px] overflow-visible sm:h-[340px] sm:w-[280px] md:h-[400px] md:w-[340px] lg:h-[500px] lg:w-[440px] xl:-mt-9 xl:h-[440px] xl:w-[340px]">
             <Image
               className="rounded object-cover shadow-sm"
               src={"/images/profile.JPEG"}

@@ -91,7 +91,7 @@ export default async function Page({
 
         {/* ##### focus areas ##### */}
         {project.focusAreas && (
-          <div className="focus-areas bg-foreground text-background -mx-4 mt-18 px-5 py-8 sm:-mx-6 sm:px-7 sm:py-12 md:py-14 lg:-mx-10 lg:mt-22 lg:px-9 lg:py-20 xl:mt-32 xl:py-26">
+          <div className="focus-areas bg-foreground text-background -mx-4 mt-18 px-5 py-8 sm:-mx-6 sm:px-7 sm:py-12 md:py-14 lg:-mx-10 lg:mt-22 lg:px-9 lg:py-20 xl:mt-44 xl:py-26">
             <div className="container mx-auto">
               <h4 className="font-medium">Focus Areas</h4>
               <ol className="divide-background/20 divide-y text-base [counter-reset:item] sm:text-lg md:mt-4 md:text-[1.35rem] lg:text-[1.75rem] xl:text-2xl">
@@ -111,7 +111,7 @@ export default async function Page({
 
         {/* ##### what made it work ##### */}
         {project.whatMadeItWork && (
-          <div className="container mx-auto mt-18">
+          <div className="container mx-auto mt-18 xl:mt-44">
             <h4 className="font-medium">What Made It Work</h4>
             <p className="pt-2 pb-6 text-base sm:text-lg md:text-xl lg:pt-3 lg:text-3xl xl:text-2xl">
               These key decisions drove user adoption and business growth.
