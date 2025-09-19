@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { navbarVar, navbarTrans } from "@/utils/animations";
 
 export const Menu = ({
   className = "",
@@ -10,12 +11,10 @@ export const Menu = ({
   color?: string;
 }) => (
   <motion.svg
-    initial={{
-      scale: 0,
-    }}
-    animate={{
-      scale: 1,
-    }}
+    initial="hidden"
+    animate="visible"
+    variants={navbarVar}
+    transition={navbarTrans}
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"

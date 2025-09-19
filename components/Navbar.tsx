@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { Cross } from "@/public/Cross";
 import { Menu } from "@/public/Menu";
 import { motion } from "motion/react";
+import { navbarVar, navbarTrans } from "@/utils/animations";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,12 +41,10 @@ export default function Navbar() {
           className={` ${isMenuOpen ? "text-background" : "text-foreground"} logo z-50 cursor-pointer text-lg uppercase`}
         >
           <motion.h6
-            initial={{
-              scale: 0,
-            }}
-            animate={{
-              scale: 1,
-            }}
+            variants={navbarVar}
+            initial="hidden"
+            animate="visible"
+            transition={navbarTrans}
           >
             Umar <span className="font-normal">Farooq</span>
           </motion.h6>

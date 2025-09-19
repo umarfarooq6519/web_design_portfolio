@@ -1,5 +1,6 @@
 "use client";
 import { ArrowUpRight } from "@/public/ArrowUpRight";
+import { standardInViewFade } from "@/utils/animations";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -23,18 +24,25 @@ const LinkButton = ({
 }: LinkButtonType) => (
   <Link href={link} className={`inline-flex w-fit cursor-pointer ${className}`}>
     <motion.div
-      whileHover={{ scale: 1.08 }}
-      whileTap={{ scale: 0.95 }}
-      className="inline-flex items-center gap-2 text-lg font-medium uppercase sm:text-xl md:text-[1.65rem] lg:text-3xl xl:text-lg"
+      initial={standardInViewFade.initial}
+      whileInView={standardInViewFade.whileInView}
+      viewport={standardInViewFade.viewport}
+      transition={standardInViewFade.transition}
     >
-      <span>[</span>
-      <span
-        className={`flex ${prefixIcon ? "flex-row-reverse" : ""} mt-1 items-center gap-2 drop-shadow`}
+      <motion.div
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 0.95 }}
+        className="inline-flex items-center gap-2 text-lg font-medium uppercase sm:text-xl md:text-[1.65rem] lg:text-3xl xl:text-lg"
       >
-        {text}
-        {icon}
-      </span>
-      <span>]</span>
+        <span>[</span>
+        <span
+          className={`flex ${prefixIcon ? "flex-row-reverse" : ""} mt-1 items-center gap-2 drop-shadow`}
+        >
+          {text}
+          {icon}
+        </span>
+        <span>]</span>
+      </motion.div>
     </motion.div>
   </Link>
 );
