@@ -22,7 +22,6 @@ export default function RotatingWords() {
           initial={{ y: -140, x: 0 }}
           animate={{ y: 0, x: 0 }}
           exit={{ y: 140, x: 0 }}
-          //   transition={{ type: "spring", stiffness: 120, damping: 15 }}
         >
           {words[index]}
         </motion.h1>

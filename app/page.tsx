@@ -116,7 +116,7 @@ export default function Home() {
           ))}
         </div>
 
-        <span className="w-fit pt-4 xl:mx-auto xl:pt-8">
+        <span className="mx-auto w-fit pt-4 xl:pt-8">
           <LinkButton text="All Projects" link="/projects" />
         </span>
       </section>

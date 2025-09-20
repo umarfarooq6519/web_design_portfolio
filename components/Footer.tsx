@@ -24,7 +24,7 @@ const Footer = () => (
         </p>
       </motion.div>
 
-      <ul className="divide-y text-3xl md:py-8 md:text-4xl lg:py-10 lg:text-5xl">
+      <ul className="divide-y py-4 text-3xl md:py-8 md:text-4xl lg:py-10 lg:text-5xl">
         {socials.map((social, index) => (
           <motion.li
             initial={standardInViewFade.initial}

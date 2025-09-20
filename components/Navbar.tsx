@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import LinkButton from "./LinkButton";
 import { currentyear } from "@/utils/date";
 import { socials } from "@/utils/socials";
@@ -80,7 +79,20 @@ export default function Navbar() {
                   className="inline-block w-full cursor-pointer overflow-hidden"
                 >
                   <Link href={item.link} className="block">
-                    <h1 className="font-medium">{item.title}</h1>
+                    <motion.h1
+                      initial={{
+                        y: 150,
+                      }}
+                      animate={{
+                        y: 0,
+                      }}
+                      transition={{
+                        delay: 0.1 * index,
+                      }}
+                      className="py-1 font-medium"
+                    >
+                      {item.title}
+                    </motion.h1>
                   </Link>
                 </span>
               ))}

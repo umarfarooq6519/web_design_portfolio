@@ -1,21 +1,10 @@
-"use client";
-import Image from "next/image";
 import { projects } from "../../utils/projects";
 import ProjectCard from "@/components/ProjectCard";
-import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import * as motion from "motion/react-client";
+import ShufflingCards from "@/components/ShufflingCards";
+import { standardInViewFade } from "@/utils/animations";
 
 export default function page() {
-  const [shuffled, setShuffled] = useState(projects.slice(0, 3));
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShuffled((prev) => [...prev].sort(() => Math.random() - 0.5));
-    }, 500);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section
       id="projects-section"
@@ -32,53 +21,29 @@ export default function page() {
                 y: 0,
               }}
               transition={{
-                delay: 0.3,
+                delay: 0.5,
               }}
-              className="h-full text-center drop-shadow"
+              className="h-full text-center drop-shadow max-sm:leading-14"
             >
               Case <br className="sm:hidden" /> Studies
             </motion.h1>
           </div>
-          <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            transition={{
-              delay: 0.6,
-            }}
-            className="wrapper relative -mt-4 -ml-6 min-h-full md:-mt-5 lg:-mt-6 lg:-ml-10 xl:-mt-9"
-          >
-            {shuffled.map((project, index) => (
-              <div
-                key={project.id}
-                className={`absolute h-[280px] w-[200px] overflow-hidden rounded shadow-sm sm:h-[320px] sm:w-[260px] md:h-[380px] md:w-[310px] lg:h-[480px] lg:w-[400px] xl:h-[460px] xl:w-[380px] ${
-                  index === 0
-                    ? "top-0 left-0 xl:left-100"
-                    : index === 1
-                      ? "top-5 left-5 xl:left-105"
-                      : "top-10 left-10 xl:left-110"
-                }`}
-              >
-                <Image
-                  src={project.portraitImg!}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </motion.div>
+          <ShufflingCards />
         </div>
       </div>
 
+      {/* TODO: Try making this a large text for word by word animation */}
       <div className="flex w-full justify-end py-14 pb-24 xl:py-32 xl:pt-36">
-        <span className="w-full max-w-2xs text-end text-base sm:max-w-sm sm:text-lg md:max-w-md md:text-2xl lg:max-w-xl lg:text-3xl xl:text-2xl">
+        <motion.span
+          initial={standardInViewFade.initial}
+          whileInView={standardInViewFade.whileInView}
+          viewport={standardInViewFade.viewport}
+          transition={standardInViewFade.transition}
+          className="w-full max-w-2xs text-end text-base sm:max-w-sm sm:text-lg md:max-w-md md:text-2xl lg:max-w-xl lg:text-3xl xl:text-2xl"
+        >
           A selection of case studies highlighting my design fundamentals &
           workflows.
-        </span>
+        </motion.span>
       </div>
 
       <section
