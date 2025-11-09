@@ -8,8 +8,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Cross } from "@/public/Cross";
 import { Menu } from "@/public/Menu";
-import { motion } from "motion/react";
-import { navbarVar, navbarTrans } from "@/utils/animations";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,14 +37,9 @@ export default function Navbar() {
           href={"/"}
           className={` ${isMenuOpen ? "text-background" : "text-foreground"} logo z-50 cursor-pointer text-lg uppercase`}
         >
-          <motion.h6
-            variants={navbarVar}
-            initial="hidden"
-            animate="visible"
-            transition={navbarTrans}
-          >
+          <h6>
             Umar <span className="font-normal">Farooq</span>
-          </motion.h6>
+          </h6>
         </Link>
 
         <button
@@ -79,20 +72,7 @@ export default function Navbar() {
                   className="inline-block w-full cursor-pointer overflow-hidden"
                 >
                   <Link href={item.link} className="block">
-                    <motion.h1
-                      initial={{
-                        y: 150,
-                      }}
-                      animate={{
-                        y: 0,
-                      }}
-                      transition={{
-                        delay: 0.1 * index,
-                      }}
-                      className="py-1 font-medium"
-                    >
-                      {item.title}
-                    </motion.h1>
+                    <h1 className="py-1 font-medium">{item.title}</h1>
                   </Link>
                 </span>
               ))}

@@ -1,8 +1,6 @@
 import { projects } from "../../utils/projects";
 import ProjectCard from "@/components/ProjectCard";
-import * as motion from "motion/react-client";
 import ShufflingCards from "@/components/ShufflingCards";
-import { standardInViewFade } from "@/utils/animations";
 
 export default function page() {
   return (
@@ -13,20 +11,9 @@ export default function page() {
       <div className="main flex h-screen flex-col items-center justify-center">
         <div className="xl:-mt-26">
           <div className="-mt-56 overflow-hidden py-2">
-            <motion.h1
-              initial={{
-                y: 150,
-              }}
-              animate={{
-                y: 0,
-              }}
-              transition={{
-                delay: 0.5,
-              }}
-              className="h-full text-center drop-shadow max-sm:leading-14"
-            >
+            <h1 className="h-full text-center drop-shadow max-sm:leading-14">
               Case <br className="sm:hidden" /> Studies
-            </motion.h1>
+            </h1>
           </div>
           <ShufflingCards />
         </div>
@@ -34,16 +21,10 @@ export default function page() {
 
       {/* TODO: Try making this a large text for word by word animation */}
       <div className="flex w-full justify-end py-14 pb-24 xl:py-32 xl:pt-36">
-        <motion.span
-          initial={standardInViewFade.initial}
-          whileInView={standardInViewFade.whileInView}
-          viewport={standardInViewFade.viewport}
-          transition={standardInViewFade.transition}
-          className="w-full max-w-2xs text-end text-base sm:max-w-sm sm:text-lg md:max-w-md md:text-2xl lg:max-w-xl lg:text-3xl xl:text-2xl"
-        >
+        <span className="w-full max-w-2xs text-end text-base sm:max-w-sm sm:text-lg md:max-w-md md:text-2xl lg:max-w-xl lg:text-3xl xl:text-2xl">
           A selection of case studies highlighting my design fundamentals &
           workflows.
-        </motion.span>
+        </span>
       </div>
 
       <section

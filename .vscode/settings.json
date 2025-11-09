@@ -1,0 +1,15 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+  // If you use the PostCSS Language Support extension, include this too
+  "postcss.lint.unknownAtRules": "ignore",
+
+  // Optional: reduce noise from other Tailwind v4-specific syntax
+  "css.lint.unknownProperties": "warning",
+
+  // Make sure Tailwind CSS IntelliSense activates in this workspace
+  "tailwindCSS.includeLanguages": {
+    "css": "css"
+  }
+}

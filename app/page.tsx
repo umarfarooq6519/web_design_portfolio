@@ -2,7 +2,6 @@ import LinkButton from "@/components/LinkButton";
 import { projects } from "../utils/projects";
 import ProjectCard from "@/components/ProjectCard";
 import { ArrowLongDown } from "@/public/ArrowLongDown";
-import * as motion from "motion/react-client";
 import { Star } from "@/public/Star";
 import RotatingWords from "@/components/RotatingTitle";
 import WordByWordAnimation from "@/components/WordByWordAnimation";
@@ -18,77 +17,31 @@ export default function Home() {
         <div className="hero-content flex h-full grow flex-col justify-center">
           <span className="uppercase drop-shadow">
             <div className="overflow-hidden">
-              <motion.h2
-                initial={{
-                  y: 100,
-                }}
-                animate={{
-                  y: 0,
-                }}
-                className="font-normal"
-              >
-                Creative
-              </motion.h2>
+              <h2 className="font-normal">Creative</h2>
             </div>
             <div className="flex items-center gap-1">
               <Star className="h-12 w-12 sm:h-15 sm:w-15 lg:h-20 lg:w-20" />{" "}
-              <motion.h1
-                initial={{
-                  x: -50,
-                }}
-                animate={{
-                  x: 0,
-                }}
-                transition={{
-                  delay: 0.6,
-                  duration: 0.6,
-                  type: "spring",
-                }}
-              >
-                Website
-              </motion.h1>
+              <h1>Website</h1>
             </div>
 
             <RotatingWords />
           </span>
 
-          <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            transition={{
-              delay: 1,
-            }}
-            className="flex items-center gap-4 pt-6"
-          >
+          <div className="flex items-center gap-4 pt-6">
             <span className="mt-0.5 rounded-full bg-green-400 p-1.5 lg:mt-1.5 lg:p-2.5 xl:p-2"></span>
             <LinkButton
               text="Open to work"
               link="mailto:umar_farooq52@outlook.com"
             />
-          </motion.div>
+          </div>
         </div>
 
         <div className="hero-wrapper flex justify-end max-xl:w-full xl:-mt-40 xl:h-full xl:items-end">
           <span className="max-w-3xs text-end sm:max-w-2xs md:max-w-sm lg:max-w-md xl:max-w-2xs">
-            <motion.h6
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              transition={{
-                delay: 1,
-              }}
-              className="font-normal"
-            >
+            <h6 className="font-normal">
               * Crafting websites for growing businesses, and convert visitors
               into customers.
-            </motion.h6>
+            </h6>
           </span>
         </div>
       </section>

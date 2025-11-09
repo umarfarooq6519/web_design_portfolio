@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ReactLenis } from "lenis/react";
+import "./globals.css";
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "Umar Farooq - Design & Digital Products",
   description: "I create brands, design websites, & shape digital products.",
 };

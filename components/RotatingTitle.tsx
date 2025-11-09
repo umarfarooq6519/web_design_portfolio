@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 
 export default function RotatingWords() {
@@ -16,16 +15,7 @@ export default function RotatingWords() {
 
   return (
     <div className="overflow-hidden">
-      <AnimatePresence mode="wait">
-        <motion.h1
-          key={words[index]}
-          initial={{ y: -140, x: 0 }}
-          animate={{ y: 0, x: 0 }}
-          exit={{ y: 140, x: 0 }}
-        >
-          {words[index]}
-        </motion.h1>
-      </AnimatePresence>
+      <h1>{words[index]}</h1>
     </div>
   );
 }
