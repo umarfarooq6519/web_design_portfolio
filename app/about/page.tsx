@@ -41,15 +41,15 @@ export default function About() {
             {skills.map((skill, i) => (
               <h1
                 key={i}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl xl:text-8xl xl:leading-28"
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl xl:text-8xl xl:leading-23"
               >
                 {skill}
               </h1>
             ))}
           </div>
 
-          <div className="content xl:max-w-2xl">
-            <p className="text-base leading-relaxed sm:text-lg md:text-xl lg:text-2xl xl:text-xl">
+          <div className="content xl:max-w-xl">
+            <p className="text-base leading-relaxed sm:text-lg md:text-xl lg:text-2xl xl:text-lg">
               I've always had an intuitive sense for art and design -
               understanding what works, what feels aesthetically right, and how
               to combine colors, typography, and structure to create meaningful

@@ -39,8 +39,8 @@ export default function Home() {
         <div className="hero-wrapper flex justify-end max-xl:w-full xl:-mt-40 xl:h-full xl:items-end">
           <span className="max-w-3xs text-end sm:max-w-2xs md:max-w-sm lg:max-w-md xl:max-w-2xs">
             <h6 className="font-normal">
-              * Crafting websites for growing businesses, and convert visitors
-              into customers.
+              <b>*</b> Crafting websites for growing businesses, and converting
+              visitors into customers.
             </h6>
           </span>
         </div>

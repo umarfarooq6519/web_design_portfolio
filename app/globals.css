@@ -3,7 +3,8 @@
 @theme {
   --color-background: #ebebeb;
   --color-foreground: #1c1c1c;
-  --font-sans: "General Sans", sans-serif;
+  --font-body: "General Sans", sans-serif;
+  --font-display: "Chillax", sans-serif;
 }
 
 @layer base {
@@ -22,7 +23,7 @@
   body {
     background: theme(--color-background);
     color: theme(--color-foreground);
-    font-family: theme(--font-sans);
+    font-family: theme(--font-body);
     scroll-behavior: smooth;
     overflow-x: hidden;
     overflow-y: auto;
@@ -42,10 +43,10 @@
   }
 
   h1 {
-    @apply text-6xl font-semibold uppercase sm:text-7xl md:text-8xl lg:text-[10rem] xl:leading-36;
+    @apply font-display text-6xl font-semibold uppercase sm:text-7xl md:text-8xl md:leading-20 lg:text-[10rem] lg:leading-34;
   }
   h2 {
-    @apply text-5xl font-medium sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl xl:leading-28;
+    @apply font-display text-5xl font-medium sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl xl:leading-28;
   }
   h3 {
     @apply text-3xl font-medium sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl;
@@ -57,7 +58,7 @@
     @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-3xl;
   }
   h6 {
-    @apply text-lg font-semibold sm:text-xl md:text-2xl lg:text-3xl xl:text-lg;
+    @apply text-lg font-semibold sm:text-xl md:text-2xl lg:text-3xl xl:text-xl;
   }
   b {
     @apply font-medium;

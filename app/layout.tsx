@@ -17,9 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* general sans (font share) */}
+        {/* General Sans (body) + Chillax (Display) (font share) */}
         <link
-          href="https://api.fontshare.com/v2/css?f[]=general-sans@1&display=swap"
+          href="https://api.fontshare.com/v2/css?f[]=general-sans@1&f[]=chillax@1&display=swap"
           rel="stylesheet"
         />
       </head>

@@ -9,7 +9,7 @@ const Footer = () => (
   >
     <div className="container mx-auto w-full">
       <div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl xl:leading-16">
+        <h2 className="text-4xl font-semibold md:text-5xl lg:text-6xl xl:leading-16">
           Get in Touch!
         </h2>
         <p className="text-xl md:mt-4 md:text-2xl lg:text-3xl xl:text-2xl">
@@ -26,13 +26,13 @@ const Footer = () => (
               target="_blank"
             >
               {social.name}
-              <ArrowUpRight className="h-7 w-7 sm:h-9 sm:w-9 md:h-10 md:w-10 lg:h-12 lg:w-12" />
+              <ArrowUpRight className="h-7 w-7 sm:h-9 sm:w-9 md:h-10 md:w-10 lg:h-10 lg:w-10" />
             </a>
           </li>
         ))}
       </ul>
 
-      <p className="text-center text-base font-normal italic sm:text-lg md:text-xl lg:text-3xl xl:text-2xl">
+      <p className="text-center text-base font-normal italic sm:text-lg md:text-xl lg:text-3xl xl:text-xl">
         © {currentyear}
       </p>
     </div>

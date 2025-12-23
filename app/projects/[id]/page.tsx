@@ -63,16 +63,18 @@ export default async function Page({
             src={project.landscapeImg}
             alt={`${project.title} landscape`}
             fill
-            className="object-cover"
+            className="object-cover object-center"
           />
         </div>
 
         {/* ##### overview ##### */}
         <div className="container mx-auto mt-14 md:mt-22 xl:mt-34">
           <h4>Overview</h4>
-          <h3 className="pt-2 md:pt-4 xl:text-4xl">{project.description}</h3>
+          <h3 className="mt-3 max-w-4xl md:pt-4 xl:text-4xl">
+            {project.description}
+          </h3>
           {project.problem && (
-            <p className="mt-8 md:mt-12 md:text-2xl lg:text-3xl lg:leading-11 xl:max-w-2xl xl:text-xl">
+            <p className="mt-8 md:mt-12 md:text-2xl lg:text-3xl lg:leading-9 xl:max-w-2xl xl:text-xl">
               {project.problem}
             </p>
           )}
@@ -83,7 +85,7 @@ export default async function Page({
           <div className="container mx-auto mt-10 flex justify-end sm:mt-14 md:mt-18 lg:mt-22">
             <span className="max-w-2xl">
               <h4 className="font-medium">Solution</h4>
-              <p className="pt-2 text-base sm:text-lg md:text-2xl lg:text-3xl lg:leading-11 xl:text-xl">
+              <p className="pt-2 text-base sm:text-lg md:text-2xl lg:text-3xl lg:leading-9 xl:text-xl">
                 {project.solution}
               </p>
             </span>
@@ -93,7 +95,7 @@ export default async function Page({
         {/* ##### focus areas ##### */}
         {project.focusAreas && (
           <div className="focus-areas bg-foreground text-background -mx-4 mt-18 px-5 py-8 sm:-mx-6 sm:px-7 sm:py-12 md:py-14 lg:-mx-10 lg:mt-22 lg:px-9 lg:py-20 xl:mt-44 xl:py-26">
-            <div className="container mx-auto">
+            <div className="container mx-auto max-w-6xl">
               <h4 className="font-medium">Focus Areas</h4>
               <ol className="divide-background/20 divide-y text-base [counter-reset:item] sm:text-lg md:mt-4 md:text-[1.35rem] lg:text-[1.75rem] xl:text-xl">
                 {project.focusAreas.map((area, idx) => (
@@ -112,7 +114,7 @@ export default async function Page({
 
         {/* ##### what made it work ##### */}
         {project.whatMadeItWork && (
-          <div className="container mx-auto mt-18 xl:mt-44">
+          <div className="container mx-auto mt-18 max-w-6xl xl:mt-44">
             <h4 className="font-medium">What Made It Work</h4>
             <p className="pt-2 pb-6 text-base sm:text-lg md:text-xl lg:pt-3 lg:text-3xl xl:text-xl">
               These key decisions drove user adoption and business growth.
@@ -138,7 +140,7 @@ export default async function Page({
           <LinkButton
             text="Go back"
             link={`/projects/#${project.id}`}
-            icon={<ArrowLeft className="h-5 w-5 md:h-7 md:w-7" />}
+            icon={<ArrowLeft className="h-5 w-5 md:h-6 md:w-6" />}
             prefixIcon={true}
           />
         </div>

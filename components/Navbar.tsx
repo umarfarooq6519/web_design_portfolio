@@ -37,7 +37,7 @@ export default function Navbar() {
           href={"/"}
           className={` ${isMenuOpen ? "text-background" : "text-foreground"} logo z-50 cursor-pointer text-lg uppercase`}
         >
-          <h6>
+          <h6 className="xl:text-lg">
             Umar <span className="font-normal">Farooq</span>
           </h6>
         </Link>
@@ -50,12 +50,12 @@ export default function Navbar() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <Menu
-            className={`text-foreground absolute inset-0 h-9 w-9 md:h-10 md:w-10 lg:-inset-3 lg:h-14 lg:w-14 xl:h-9 xl:w-9 ${
+            className={`text-foreground absolute inset-0 h-9 w-9 md:h-10 md:w-10 lg:-inset-0 lg:h-14 lg:w-14 xl:h-9 xl:w-9 ${
               isMenuOpen ? "opacity-0" : "opacity-100"
             }`}
           />
           <Cross
-            className={`text-background absolute inset-0 h-9 w-9 md:h-10 md:w-10 lg:-inset-3 lg:h-14 lg:w-14 xl:h-9 xl:w-9 ${
+            className={`text-background absolute inset-0 h-9 w-9 md:h-10 md:w-10 lg:-inset-0 lg:h-14 lg:w-14 xl:h-9 xl:w-9 ${
               isMenuOpen ? "opacity-100" : "opacity-0"
             }`}
           />
@@ -64,8 +64,8 @@ export default function Navbar() {
 
       {isMenuOpen && (
         <div className="bg-opacity-95 bg-foreground fixed inset-0 z-20 p-4 md:p-8 lg:p-10">
-          <div className="container mx-auto flex h-full items-start justify-center max-xl:mt-20 max-xl:flex-col">
-            <div className="text-background flex h-full w-full flex-col items-start justify-end space-y-4 xl:justify-center">
+          <div className="container mx-auto flex h-full items-start justify-center gap-10 max-xl:mt-30 max-xl:flex-col">
+            <div className="text-background flex h-full w-full flex-col items-start justify-end space-y-0 xl:justify-end">
               {screens.map((item, index) => (
                 <span
                   key={index}
@@ -77,11 +77,11 @@ export default function Navbar() {
                 </span>
               ))}
             </div>
-            <div className="text-background flex h-full w-full shrink flex-col items-start justify-center space-y-1 text-start font-medium uppercase max-xl:pb-32 md:space-y-3 lg:space-y-5 xl:items-end xl:space-y-2">
+            <div className="text-background flex h-full w-full shrink flex-col items-start justify-start space-y-1 text-start font-medium uppercase max-xl:pb-32 md:space-y-3 lg:space-y-5 xl:items-end xl:justify-end xl:space-y-2">
               {socials.map((social, index) => (
                 <LinkButton key={index} text={social.name} link={social.link} />
               ))}
-              <p className="mt-3 text-base font-light italic sm:text-lg md:text-xl lg:text-3xl xl:text-xl">
+              <p className="mt-3 text-base font-light italic sm:text-lg md:text-xl lg:text-3xl xl:text-lg">
                 © {currentyear}
               </p>
             </div>

@@ -8,7 +8,7 @@ const WordByWordAnimation = () => {
   const totalWords = words.length;
 
   return (
-    <h3 className="flex flex-wrap font-normal md:leading-11 lg:leading-16">
+    <h3 className="flex flex-wrap font-normal md:leading-14 lg:leading-16">
       {words.map((word, i) => (
         <span key={i} className="mr-2">
           {word}
